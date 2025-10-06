@@ -1,5 +1,6 @@
-package com.example.SpringSecurityExample;
+package com.example.SpringSecurityExample.controller;
 
+import com.example.SpringSecurityExample.model.Student;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,8 +33,9 @@ public class StudentController {
     }
 
     @PostMapping("/students")
-    public void addStudent(@RequestBody Student stud)
+    public Student addStudent(@RequestBody Student stud)
     {
         students.add(stud);
+        return stud;
     }
 }
